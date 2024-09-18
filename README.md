@@ -48,3 +48,19 @@ export default tseslint.config({
   },
 })
 ```
+## Usage
+
+### install dependencies
+```yarn install```
+
+### execute on develop mode
+```yarn dev```
+
+<hr/>
+
+
+Para usar este reporsitorio debe ejecutar el proyecto nest-back-export, el cual esta en este repositorio de github: 
+
+https://github.com/henryGustav/nest-back-export
+
+

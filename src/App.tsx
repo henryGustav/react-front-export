@@ -34,6 +34,24 @@ function App() {
     pom.setAttribute("download", "file.xlsx");
     pom.click();
   };
+
+  const handleDownloadZip = async () => {
+    const file: any = await axios.post(
+      "http://localhost:3000/export/zip",
+      {},
+      { responseType: "blob" }
+    );
+
+    const blob = new Blob([file.data], {
+      type: "application/zip",
+    });
+    const url = URL.createObjectURL(blob);
+    const pom = document.createElement("a");
+    pom.href = url;
+    pom.setAttribute("download", "compres.zip");
+    pom.click();
+  };
+
   return (
     <div
       className=""
@@ -55,6 +73,14 @@ function App() {
           onClick={handleDownloadXlsx}
         >
           Export XLSX
+        </button>
+
+        <button
+          className="button-general"
+          style={{ background: "orange" }}
+          onClick={handleDownloadZip}
+        >
+          Export ZIP
         </button>
       </div>
     </div>
